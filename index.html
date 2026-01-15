@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HuertoHogar | Frescura en tu hogar</title>
+    <link rel="stylesheet" href="assets/css/css.css" />
+</head>
+<body class="body">
+
+    <header>
+        <a href="index.html" id="logo">
+            <img src="assets/fotos/logo.png" alt="Logo de HuertoHogar" />
+        </a>
+        
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="catalogo.html">Catálogo</a>
+            <a href="iniciarSesion.html">Iniciar Sesión</a>
+            <a href="crearCuenta.html">Crear cuenta</a>
+            
+            <div class="cart-icon-container" onclick="toggleCart()" style="cursor: pointer; margin-left: 15px; display: inline-block;">
+                🛒 <span id="cart-count">0</span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="hero-section">
+        <h1 id="main-greeting">HUERTO HOGAR PARA TODOS</h1>
+        <p class="texto">
+            Delivery de frutas, verduras y mas..
+Compra desde la comodidad de tu casa.. al mejor precio..
+        </p>
+        
+        <a href="catalogo.html" class="btn-principal">Ver Productos</a>
+
+        <img width="400px" src="assets/fotos/logo.png" alt="Huerto hogar imagen" class="imagen-bajo-texto">
+        <img width="700px" src=" https://vegetalesyfrutas.cl/wp-content/uploads/2025/12/fruta-mas-premium-de-stgo-escritorio.webp" alt= "registra-imagen" class="registra-imagen">
+        
+    </main>
+
+    <section id="productos">
+        <h2>LAS MEJORES OFERTAS</h2>
+        
+        <div class="productos">
+            <div class="producto">
+                <img src="assets/fotos/man.webp" alt="Manzanas" />
+                <div class="producto-info">
+                    <h3>Manzanas rojas y verdes</h3>
+                    <p class="precio">$1,000 / kg</p>
+                    <button onclick="window.location.href='catalogo.html'">Ver más</button>
+                </div>
+            </div>
+            <div class="producto">
+                <img src="assets/fotos/tomate.webp" alt="Tomate" />
+                <div class="producto-info">
+                    <h3>Tomate</h3>
+                    <p class="precio">$800 / kg</p>
+                    <button onclick="window.location.href='catalogo.html'">Ver más</button>
+                </div>
+            </div>
+            <div class="producto">
+                <img src="assets/fotos/platano.jpg" alt="Plátanos" />
+                <div class="producto-info">
+                    <h3>Plátanos</h3>
+                    <p class="precio">$900 / kg</p>
+                    <button onclick="window.location.href='catalogo.html'">Ver más</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="info-adicional">
+        <div class="contenedor-info">
+            <div class="info-item">
+                <span class="icon">🚚</span>
+                <h3>Envío Gratis</h3>
+                <p>En compras mayores a <strong>$30.000 pesos</strong></p>
+            </div>
+            
+            <div class="info-item">
+                <span class="icon">📞</span>
+                <h3>Atención al Cliente</h3>
+                <p>+569 2012 3456</p>
+            </div>
+
+            <div class="info-item">
+                <span class="icon">✉️</span>
+                <h3>Correo Electrónico</h3>
+                <p>contacto@huertohogar.com</p>
+            </div>
+        </div>
+    </section>
+
+    <div id="overlay" class="overlay" onclick="toggleCart()"></div>
+    
+    <div id="cart-sidebar">
+        <span class="close-cart" onclick="toggleCart()">&times;</span>
+        <h2>Tu Carrito</h2>
+        <div id="cart-list"></div>
+        <div id="cart-total-container"></div>
+        <button class="submit btn-vaciar" onclick="vaciarCarrito()">Vaciar Carrito</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 HuertoHogar. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="assets/js/carrito.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const nombre = localStorage.getItem('nombrePersona');
+            const h1Principal = document.getElementById('main-greeting');
+            if (nombre && h1Principal) {
+                h1Principal.textContent = '¡Bienvenido de nuevo, ' + nombre + '!';
+            }
+        });
+    </script>
+    
+    <div id="toast-container" style="position: fixed; bottom: 20px; left: 20px; z-index: 3000;"></div>
+</body>
+</html>

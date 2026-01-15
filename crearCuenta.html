@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HuertoHogar</title>
+    <link rel="stylesheet" href="assets/css/css.css" />
+</head>
+<body class="body2">
+
+    <header class="logo">
+        <a href="index.html" id="logo">
+            <img src="assets/fotos/logo.png" alt="Logo" />
+        </a>
+        <nav>
+           <a href="index.html">Inicio</a>
+           <a href="catalogo.html">Catálogo</a>
+           <a href="iniciarSesion.html">Iniciar Sesion</a>
+           <a href="crearCuenta.html">Crear cuenta</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="cuenta">
+            <h1>CREAR CUENTA</h1>
+            <form action="#" method="post" id="signup-form">
+                <p>
+                    <label for="nombre-usuario">Nombre de Usuario:</label>
+                    <input type="text" id="nombre-usuario" name="nombre-usuario" required />
+                </p>
+                <p>
+                    <label for="correo-electronico">Correo Electrónico:</label>
+                    <input type="email" id="correo-electronico" name="correo-electronico" required />
+                </p>
+                <p>
+                    <label for="contrasena">Contraseña:</label>
+                    <input
+                        type="password"
+                        id="contrasena"
+                        name="contrasena"
+                        required
+                        minlength="8"
+                        title="Debe contener al menos 8 caracteres"
+                    />
+                </p>
+                <p>
+                    <label for="confirmar-contrasena">Confirmar Contraseña:</label>
+                    <input type="password" id="confirmar-contrasena" name="confirmar-contrasena" required />
+                </p>
+                <button type="submit" class="submit">Crear Cuenta de Usuario</button>
+            </form>
+            <div id="signup-error-message" style="margin-top: 10px;"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 HuertoHogar. Todos los derechos reservados.</p>
+    </footer>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

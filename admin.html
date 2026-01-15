@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel Admin | HuertoHogar</title>
+    <link rel="stylesheet" href="assets/css/css.css">
+</head>
+<body class="body">
+    <header>
+        <a href="index.html" id="logo"><img src="assets/fotos/logo.png" alt="Logo"></a>
+        <nav>
+            <a href="index.html">Ver Sitio Público</a>
+            <a href="#" onclick="cerrarSesion()">Cerrar Sesión</a>
+        </nav>
+    </header>
+
+    <main style="max-width: 900px; margin: auto; padding: 40px;">
+        <h1>Panel de Gestión Administrativa</h1>
+        
+        <section class="admin-card">
+            <h2>Gestión de Inventario</h2>
+            <table style="width: 100%; background: white; border-radius: 10px; padding: 20px; text-align: left;">
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Precio</th>
+                        <th>Stock Actual</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody id="admin-product-list">
+                    </tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="assets/js/admin.js"></script>
+</body>
+</html>

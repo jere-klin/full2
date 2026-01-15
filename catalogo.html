@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Productos | HuertoHogar</title>
+    <link rel="stylesheet" href="assets/css/css.css">
+</head>
+<body>
+
+    <header class="logo">
+        <a href="index.html" id="logo">
+            <img src="assets/fotos/logo.png" alt="Logo de HuertoHogar">
+        </a>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="catalogo.html">Catálogo</a>
+            <a href="iniciarSesion.html">Iniciar Sesion</a>
+            <a href="crearCuenta.html">Crear cuenta</a>
+            
+            <div class="cart-icon-container" onclick="toggleCart()" style="cursor: pointer; margin-left: 15px;">
+                🛒 <span id="cart-count">0</span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Catálogo de Productos</h1>
+
+        <div class="catalogo" id="product-list">
+            
+            <div class="producto">
+                <img src="assets/fotos/peras.webp" alt="Peras" />
+                <div class="producto-info">
+                    <h3>Peras</h3>
+                    <p>Nuestras peras son las más frescas y ricas de todo el mercado nacional.</p>
+                    <p style="font-size: 0.9em; color: #555;">Disponibles: <span id="stock-1">10</span> kg</p>
+                    <div class="precio">$800 pesos el kg.</div>
+                    <button onclick="agregarAlCarrito(1)">Agregar al carrito</button>
+                </div>
+            </div>
+
+            <div class="producto">
+                <img src="assets/fotos/limones.webp" alt="Limones" />
+                <div class="producto-info">
+                    <h3>Limones</h3>
+                    <p>Nuestros limones son los más jugosos del mercado. Excelente calidad garantizada.</p>
+                    <p style="font-size: 0.9em; color: #555;">Disponibles: <span id="stock-2">15</span> kg</p>
+                    <div class="precio">$700 pesos el kg.</div>
+                    <button onclick="agregarAlCarrito(2)">Agregar al carrito</button>
+                </div>
+            </div>
+
+            <div class="producto">
+                <img src="assets/fotos/lechuga.webp" alt="Lechugas" />
+                <div class="producto-info">
+                    <h3>Lechugas</h3>
+                    <p>Sin lechugas no hay comidas. Las nuestras son cosechadas y llevadas directamente a tu hogar.</p>
+                    <p style="font-size: 0.9em; color: #555;">Disponibles: <span id="stock-3">5</span> unidades</p>
+                    <div class="precio">$500 pesos cada una.</div>
+                    <button onclick="agregarAlCarrito(3)">Agregar al carrito</button>
+                </div>
+            </div>
+            <div class="producto">
+                <img src="assets/fotos/frutillas.webp" alt="frutillas" />
+                <div class="producto-info">
+                    <h3>frutillas</h3>
+                    <p>La mejor seleccion de frutillas para tu hogar..</p>
+                    <p style="font-size: 0.9em; color: #555;">Disponibles: <span id="stock-4">10</span> unidades</p>
+                    <div class="precio">$1000 pesos el kg.</div>
+                    <button onclick="agregarAlCarrito(4)">Agregar al carrito</button>
+                </div>
+
+        </div>
+
+        <div class="producto">
+                <img src="assets/fotos/tomate.webp" alt="tomates" />
+                <div class="producto-info">
+                    <h3>tomates</h3>
+                    <p>tomates para tu hogar..</p>
+                    <p style="font-size: 0.9em; color: #555;">Disponibles: <span id="stock-5">20</span> kilos</p>
+                    <div class="precio">$1000 pesos el kg.</div>
+                    <button onclick="agregarAlCarrito(5)">Agregar al carrito</button>
+                </div>
+
+        </div>
+         <div class="producto">
+                <img src="assets/fotos/platano.jpg" alt="platano" />
+                <div class="producto-info">
+                    <h3>platano</h3>
+                    <p>platanos para tu hogar..</p>
+                    <p style="font-size: 0.9em; color: #555;">Disponibles: <span id="stock-6">20</span> kilos</p>
+                    <div class="precio">$1000 pesos el kg.</div>
+                    <button onclick="agregarAlCarrito(6)">Agregar al carrito</button>
+                </div>
+
+        </div>
+         <div class="producto">
+                <img src="assets/fotos/man.webp" alt="manzanas" />
+                <div class="producto-info">
+                    <h3>manzanas</h3>
+                    <p>manzanas frescas para tu hogar..</p>
+                    <p style="font-size: 0.9em; color: #555;">Disponibles: <span id="stock-7">20</span> kilos</p>
+                    <div class="precio">$900 pesos el kg.</div>
+                    <button onclick="agregarAlCarrito(7)">Agregar al carrito</button>
+                </div>
+
+         </div>
+        <div class="producto">
+                <img src="assets/fotos/mangos.webp" alt="mangos" />
+                <div class="producto-info">
+                    <h3>mangos</h3>
+                    <p>mangos frescas para tu hogar..</p>
+                    <p style="font-size: 0.9em; color: #555;">Disponibles: <span id="stock-8">20</span> kilos</p>
+                    <div class="precio">$1200 pesos el kg.</div>
+                    <button onclick="agregarAlCarrito(8)">Agregar al carrito</button>
+                </div>
+
+        </div>
+    </main>
+
+    <div id="overlay" class="overlay" onclick="toggleCart()"></div>
+    
+    <div id="cart-sidebar">
+        <span class="close-cart" onclick="toggleCart()">&times;</span>
+        <h2>Tu Carrito</h2>
+        
+        <div id="cart-list" style="flex-grow: 1; overflow-y: auto; margin-bottom: 20px;">
+            <p style="text-align:center; padding:20px; color: #666;">Tu carrito está vacío</p>
+        </div>
+
+        <div id="cart-total-container">
+            </div>
+        
+        <button class="submit btn-vaciar" onclick="vaciarCarrito()" style="margin-top: 10px;">Vaciar Carrito</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 HuertoHogar. Todos los derechos reservados.</p>
+    </footer>
+
+    <div id="toast-container" style="position: fixed; bottom: 20px; left: 20px; z-index: 3000;"></div>
+
+    <script src="assets/js/carrito.js"></script>
+</body>
+</html>
